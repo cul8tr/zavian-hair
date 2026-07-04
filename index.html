@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavian Hair Boutique | Luxury Hair Care & Styling</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0c0c0c;
+        }
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Custom Keyframe Animations for Initial Load */
+        @keyframes revealDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes revealUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-reveal-down {
+            animation: revealDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-reveal-up {
+            animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        /* Scroll Reveal State (Handled by Intersection Observer Script) */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-neutral-200 selection:bg-amber-500 selection:text-neutral-900 overflow-x-hidden">
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-50 w-full border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md animate-reveal-down">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <a href="#home" class="serif-title text-2xl font-semibold tracking-widest text-amber-400 group">
+                ZAVIAN<span class="text-neutral-400 text-xs block tracking-normal font-sans font-light -mt-1 text-right group-hover:text-amber-300 transition-colors duration-300">HAIR BOUTIQUE</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider text-neutral-400">
+                <a href="#home" class="hover:text-amber-400 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">HOME</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">SERVICES</a>
+                <a href="#about" class="hover:text-amber-400 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">ABOUT</a>
+                <a href="#hours" class="hover:text-amber-400 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">HOURS & LOCATION</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">CONTACT</a>
+            </nav>
+
+            <a href="#contact" class="border border-amber-500/50 bg-amber-500/10 px-5 py-2 text-xs font-semibold tracking-widest text-amber-400 uppercase hover:bg-amber-500 hover:text-neutral-950 transition-all duration-500 transform hover:scale-105 rounded-sm">
+                Book Consult
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative flex min-h-[90vh] items-center justify-center bg-cover bg-center bg-no-repeat transition-all duration-1000" style="background-image: linear-gradient(to bottom, rgba(12,12,12,0.6), rgba(12,12,12,0.95)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80');">
+        <div class="mx-auto max-w-5xl px-6 text-center z-10">
+            <span class="text-xs font-semibold tracking-[0.3em] text-amber-500 uppercase block mb-4 animate-fade-in">Premium Hair Artistry</span>
+            <h1 class="serif-title text-5xl md:text-7xl font-light tracking-wide text-neutral-100 leading-tight mb-6 animate-reveal-up">
+                Where Elite Style <br><span class="italic text-amber-400">Meets Bespoke Care</span>
+            </h1>
+            <p class="mx-auto max-w-2xl text-sm md:text-base font-light leading-relaxed text-neutral-400 mb-8 animate-reveal-up [animation-delay:0.2s] opacity-0 [animation-fill-mode:forwards]">
+                From precision cuts and modern balayage packages to our signature Japanese Head Spa, our dedicated team designs striking transformations tailored completely to your lifestyle.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-reveal-up [animation-delay:0.4s] opacity-0 [animation-fill-mode:forwards]">
+                <a href="#services" class="w-full sm:w-auto bg-amber-500 text-neutral-950 px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-0.5 rounded-sm">
+                    View Luxury Menu
+                </a>
+                <a href="#contact" class="w-full sm:w-auto border border-neutral-700 bg-neutral-900/60 text-neutral-200 px-8 py-4 text-xs font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all duration-300 transform hover:-translate-y-0.5 rounded-sm">
+                    Secure an Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Highlights -->
+    <section class="bg-neutral-950 py-16 border-b border-neutral-900 relative">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center reveal-element">
+                <div class="p-6 transition-transform duration-300 hover:scale-105">
+                    <div class="text-amber-400 serif-title text-3xl font-light mb-2">Master Colorists</div>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">Years of specialized experience delivering vibrant, custom colors and seamless balayage package designs.</p>
+                </div>
+                <div class="p-6 border-y md:border-y-0 md:border-x border-neutral-800 transition-transform duration-300 hover:scale-105">
+                    <div class="text-amber-400 serif-title text-3xl font-light mb-2">Premium Products</div>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">We select only top-tier luxury formulas to preserve, nourish, and revitalize the innate health of your hair.</p>
+                </div>
+                <div class="p-6 transition-transform duration-300 hover:scale-105">
+                    <div class="text-amber-400 serif-title text-3xl font-light mb-2">Bespoke Atmosphere</div>
+                    <p class="text-xs text-neutral-400 font-light leading-relaxed">Relax, unwind, and recharge inside an intimate premium salon context built focused on personal comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-900/30">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center mb-16 reveal-element">
+                <span class="text-xs font-semibold tracking-[0.2em] text-amber-500 uppercase block mb-2">The Menu</span>
+                <h2 class="serif-title text-4xl md:text-5xl font-light text-neutral-100">Our Tailored Services</h2>
+                <div class="mx-auto mt-4 h-[1px] w-12 bg-amber-500/50"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Category 1 -->
+                <div class="bg-neutral-950/60 border border-neutral-800/80 rounded-sm overflow-hidden flex flex-col justify-between reveal-element transition-all duration-500 hover:border-amber-500/30 hover:shadow-xl hover:shadow-amber-500/5 group">
+                    <div>
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Precision Cutting" class="w-full h-48 object-cover opacity-85 transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="serif-title text-2xl text-amber-400 mb-6 tracking-wide">Styling & Cut</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Style Cut & Blow Dry</span>
+                                    <span class="text-sm font-semibold text-amber-400">$95+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Signature Blow Dry</span>
+                                    <span class="text-sm font-semibold text-amber-400">$60+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Mens Precision Cut</span>
+                                    <span class="text-sm font-semibold text-amber-400">$55+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Elegant Upstyle</span>
+                                    <span class="text-sm font-semibold text-amber-400">$120+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <p class="text-xs text-neutral-500 font-light italic">All cutting services begin with a luxury personalized consultation.</p>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-neutral-950/60 border border-neutral-800/80 rounded-sm overflow-hidden flex flex-col justify-between reveal-element transition-all duration-500 hover:border-amber-500/30 hover:shadow-xl hover:shadow-amber-500/5 group [animation-delay:0.2s]">
+                    <div>
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80" alt="Luxury Hair Colouring" class="w-full h-48 object-cover opacity-85 transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="serif-title text-2xl text-amber-400 mb-6 tracking-wide">Colour & Artistry</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Full Head Foils</span>
+                                    <span class="text-sm font-semibold text-amber-400">$210+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Premium Balayage Package</span>
+                                    <span class="text-sm font-semibold text-amber-400">$280+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Regrowth Touch-Up</span>
+                                    <span class="text-sm font-semibold text-amber-400">$110+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Gloss Tonal Refresh</span>
+                                    <span class="text-sm font-semibold text-amber-400">$85+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <p class="text-xs text-neutral-500 font-light italic">Pricing structures vary depending on structural length and density requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-neutral-950/60 border border-neutral-800/80 rounded-sm overflow-hidden flex flex-col justify-between reveal-element transition-all duration-500 hover:border-amber-500/30 hover:shadow-xl hover:shadow-amber-500/5 group [animation-delay:0.4s]">
+                    <div>
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Japanese Head Spa" class="w-full h-48 object-cover opacity-85 transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="serif-title text-2xl text-amber-400 mb-6 tracking-wide">Treatments & Spa</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Japanese Head Spa Ritual</span>
+                                    <span class="text-sm font-semibold text-amber-400">$150+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Deep Hydration Infusion</span>
+                                    <span class="text-sm font-semibold text-amber-400">$75+</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Premium Extensions</span>
+                                    <span class="text-sm font-semibold text-amber-400">By Consult</span>
+                                </div>
+                                <div class="flex justify-between items-baseline border-b border-neutral-800 pb-2 group/item">
+                                    <span class="text-sm font-medium text-neutral-200 group-hover/item:text-amber-200 transition-colors">Bridal Package Styling</span>
+                                    <span class="text-sm font-semibold text-amber-400">Custom</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <p class="text-xs text-neutral-500 font-light italic">Indulge in advanced therapeutic scalp and strand nourishment protocols.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-950">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group reveal-element">
+                    <div class="absolute -inset-1 rounded-sm bg-gradient-to-r from-amber-500/30 to-transparent blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="overflow-hidden rounded-sm border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=800&q=80" alt="Styling Session" class="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+                <div class="space-y-6 reveal-element [animation-delay:0.2s]">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-amber-500 uppercase block">The Boutique Experience</span>
+                    <h2 class="serif-title text-4xl font-light text-neutral-100">About Zavian Hair Boutique</h2>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed">
+                        Welcome to Zavian Hair Boutique, an intimate boutique salon system engineered where intentional modern style safely meets advanced professional care. We operate as a dedicated team of passionate stylists focused entirely on transforming every salon appointment into a refreshing, confidence-boosting experience.
+                    </p>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed">
+                        Whether you visit for a quick luxury trim, a bold new colour shift, or our iconic therapeutic head spa treatments, we utilize premium product matrices and advanced industrial methodologies to ensure stunning, highly durable results.
+                    </p>
+                    <div class="pt-4 transform hover:translate-x-2 transition-transform duration-300">
+                        <blockquote class="border-l-2 border-amber-500 pl-4 italic text-neutral-300 text-sm font-light">
+                            "Every service initiates with a dedicated, personal profile consultation—ensuring your final aesthetic cleanly balances your personality, architecture, and lifestyle vision."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location Block -->
+    <section id="hours" class="py-24 bg-neutral-900/20 border-t border-neutral-900">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Column 1: Operating Hours -->
+                <div class="bg-neutral-950/40 p-8 border border-neutral-800/60 rounded-sm reveal-element transition-all duration-300 hover:border-neutral-700">
+                    <h3 class="serif-title text-2xl text-amber-400 mb-6 tracking-wide">Working Hours</h3>
+                    <div class="space-y-3 text-sm font-light text-neutral-400">
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span>Monday</span> <span class="text-neutral-200">9:00 AM - 5:30 PM</span>
+                        </div>
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span>Tuesday</span> <span class="text-neutral-200">9:00 AM - 5:30 PM</span>
+                        </div>
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span>Wednesday</span> <span class="text-neutral-200">9:00 AM - 5:30 PM</span>
+                        </div>
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span class="text-amber-500/80 font-medium">Thursday</span> <span class="text-amber-400 font-medium">9:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span>Friday</span> <span class="text-neutral-200">9:00 AM - 5:30 PM</span>
+                        </div>
+                        <div class="flex justify-between border-b border-neutral-900 pb-2">
+                            <span>Saturday</span> <span class="text-neutral-200">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sunday</span> <span class="text-neutral-200">10:00 AM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Location Details -->
+                <div class="bg-neutral-950/40 p-8 border border-neutral-800/60 rounded-sm flex flex-col justify-between reveal-element [animation-delay:0.2s] transition-all duration-300 hover:border-neutral-700">
+                    <div>
+                        <h3 class="serif-title text-2xl text-amber-400 mb-6 tracking-wide">Find Our Salon</h3>
+                        <div class="space-y-4 text-sm font-light text-neutral-400">
+                            <div>
+                                <span class="text-xs uppercase text-neutral-500 font-semibold block tracking-wider mb-1">Address</span>
+                                <p class="text-neutral-200">2 Sentry Dr,<br>Stanhope Gardens NSW 2768</p>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase text-neutral-500 font-semibold block tracking-wider mb-1">Phone Enquiries</span>
+                                <p class="text-amber-400 font-medium text-base hover:text-amber-300 transition-colors"><a href="tel:0286059797">02 8605 9797</a></p>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase text-neutral-500 font-semibold block tracking-wider mb-1">Email Connection</span>
+                                <p class="text-neutral-200">info@zavianhairboutique.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-neutral-900 mt-6 lg:mt-0">
+                        <p class="text-xs text-neutral-500 font-light">Ample parking available within the local retail precinct access points.</p>
+                    </div>
+                </div>
+
+                <!-- Column 3: Live Map Frame -->
+                <div class="h-full min-h-[300px] bg-neutral-950 border border-neutral-800/60 rounded-sm overflow-hidden relative reveal-element [animation-delay:0.4s]">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=2%20Sentry%20Dr,%20Stanhope%20Gardens%20NSW%202768&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        class="w-full h-full border-0 opacity-70 grayscale contrast-125 invert hover:opacity-90 transition-opacity duration-500"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Generation Contact Form -->
+    <section id="contact" class="py-24 bg-neutral-950 border-t border-neutral-900">
+        <div class="mx-auto max-w-3xl px-6 reveal-element">
+            <div class="text-center mb-12">
+                <span class="text-xs font-semibold tracking-[0.2em] text-amber-500 uppercase block mb-2">Appointments</span>
+                <h2 class="serif-title text-4xl font-light text-neutral-100">Secure Your Session</h2>
+                <p class="text-neutral-400 text-xs font-light mt-2">Submit your details below and a concierge team member will confirm your slot within 24 business hours.</p>
+            </div>
+
+            <form action="https://formsubmit.co/forgamesandwebsitesonly.com" method="POST" class="space-y-6">
+                <input type="hidden" name="_subject" value="New Appointment Booking Request - Zavian Hair">
+                <input type="hidden" name="_honeypot" value="">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="group">
+                        <label class="block text-xs uppercase tracking-wider text-neutral-400 font-medium mb-2 group-focus-within:text-amber-400 transition-colors">Full Name *</label>
+                        <input type="text" name="name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-sm text-neutral-200 focus:outline-none focus:border-amber-500 focus:bg-neutral-950 transition duration-300">
+                    </div>
+                    <div class="group">
+                        <label class="block text-xs uppercase tracking-wider text-neutral-400 font-medium mb-2 group-focus-within:text-amber-400 transition-colors">Phone Number *</label>
+                        <input type="tel" name="phone" required class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-sm text-neutral-200 focus:outline-none focus:border-amber-500 focus:bg-neutral-950 transition duration-300">
+                    </div>
+                </div>
+
+                <div class="group">
+                    <label class="block text-xs uppercase tracking-wider text-neutral-400 font-medium mb-2 group-focus-within:text-amber-400 transition-colors">Email Address *</label>
+                    <input type="email" name="email" required class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-sm text-neutral-200 focus:outline-none focus:border-amber-500 focus:bg-neutral-950 transition duration-300">
+                </div>
+
+                <div class="group">
+                    <label class="block text-xs uppercase tracking-wider text-neutral-400 font-medium mb-2 group-focus-within:text-amber-400 transition-colors">Select Primary Treatment *</label>
+                    <select name="service" required class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-sm text-neutral-300 focus:outline-none focus:border-amber-500 focus:bg-neutral-950 transition duration-300">
+                        <option value="Cut & Styling">Style Cut & Blow Dry</option>
+                        <option value="Colour / Balayage">Colour Artistry & Balayage Package</option>
+                        <option value="Japanese Head Spa">Japanese Head Spa Ritual</option>
+                        <option value="Extensions / Special Treatment">Premium Extensions / Treatment</option>
+                        <option value="Other / Consultation">General Consultation</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <label class="block text-xs uppercase tracking-wider text-neutral-400 font-medium mb-2 group-focus-within:text-amber-400 transition-colors">Preferred Day & Special Notes</label>
+                    <textarea name="message" rows="4" placeholder="Mention your preferred styling day/time window or any hair history..." class="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-4 py-3 text-sm text-neutral-200 placeholder-neutral-600 focus:outline-none focus:border-amber-500 focus:bg-neutral-950 transition duration-300"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-amber-500 text-neutral-950 font-bold text-xs tracking-widest uppercase py-4 hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/20 transition duration-300 transform hover:-translate-y-0.5 rounded-sm shadow-md cursor-pointer">
+                        Request Booking Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12 text-center text-xs text-neutral-600 font-light">
+        <div class="mx-auto max-w-7xl px-6 space-y-4">
+            <p class="serif-title text-base font-semibold tracking-widest text-amber-500/80">ZAVIAN HAIR BOUTIQUE</p>
+            <p>&copy; 2026 Zavian Hair Boutique. Fully Managed & Maintained Solution.</p>
+            <div class="flex justify-center space-x-6 text-neutral-500 pt-2">
+                <a href="#home" class="hover:text-amber-400 transition-colors">Top</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
+                <a href="#hours" class="hover:text-amber-400 transition-colors">Hours</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer Script for Scroll Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-element');
+            revealElements.forEach(element => observer.observe(element));
+        });
+    </script>
+
+</body>
+</html>
